@@ -203,6 +203,7 @@ text-decoration: none;
 .reply {
   position: absolute;
   display: none;
+  z-index: -1;
   }
 
 
@@ -271,14 +272,12 @@ text-decoration: none;
 }
 
 .centered-big {
- margin: auto;
  position: absolute;
- font-size: 0.7vw;
+ font-size: 0.75vw;
  width: 18%;
  top: 5%;
  right: 40%;
  text-align: right;
- z-index: -1;
 }
 
 

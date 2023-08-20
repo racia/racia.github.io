@@ -14,7 +14,7 @@ const pop = [
 ];
 
 const pop2 = [
-  {visibility: "hidden", transform: "translate(0%, -100%)", offset:0},
+  {visibility: "hidden", transform: "translate(0%, -115%)", offset:0},
   {transform: "translate(0%, -150%)", offset:1}
 ];
 
@@ -24,21 +24,6 @@ delay: 50,
 fill: "both"
 };
 
-const q1 = document.getElementById('q1');
-q1.addEventListener('click',  function(){
-   answer('hobby', 'experience', 'research')
-});
-
-const q2 = document.getElementById('q2');
-q2.addEventListener('click',  function(){
-   answer('experience', 'hobby', 'research', true)
-});
-
-const q3 = document.getElementById('q3');
-q3.addEventListener('click',  function(){
-   answer('research', 'hobby', 'experience', true)
-});
-
 function answer(a, b, c, d) {
     hide(b, c);
     if (d) {
@@ -47,5 +32,21 @@ function answer(a, b, c, d) {
     } else {
     document.getElementById(a).style.display = "block";
     document.getElementById(a).animate(pop, delay);
-}
+        }
     }
+
+const q1 = document.getElementById('q1');
+const q2 = document.getElementById('q2');
+const q3 = document.getElementById('q3');
+
+q1.addEventListener('click',  function(){
+   answer('hobby', 'experience', 'research')
+});
+
+q2.addEventListener('click',  function(){
+   answer('experience', 'hobby', 'research', true)
+});
+
+q3.addEventListener('click',  function(){
+   answer('research', 'hobby', 'experience', true)
+});
