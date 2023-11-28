@@ -22,7 +22,7 @@ html, body{
 }
 
 .line {
-color: #5E4A73;
+color: blue;
 }
 
 ul {
@@ -102,6 +102,7 @@ color: black;
 
 h2 {
 text-align: left;
+margin-bottom: 2px;
 }
 
 h4 {
@@ -283,7 +284,7 @@ text-decoration: none;
 
 
 .centered-small {
- color: #5E4A73;
+ color: blue;
  background-color: white;
  border: none;
  margin: auto;
@@ -303,7 +304,7 @@ text-decoration: none;
 
 
 .centered-medium {
- color: #5E4A73;
+ color: blue;
  background-color: white;
  border: none;
  margin: auto;
