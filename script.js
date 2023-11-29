@@ -14,7 +14,7 @@ const pop = [
 ];
 
 const pop2 = [
-  {visibility: "hidden", transform: "translate(0%, -100%)", offset:0},
+  {visibility: "hidden", transform: "translate(0%, -125%)", offset:0},
   {transform: "translate(0%, -150%)", offset:1}
 ];
 
