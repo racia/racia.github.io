@@ -1,10 +1,33 @@
+  /* if desktop */
+    .mobile_device_380px {
+        display: none;
+        text-align: left;
+    }
+    .mobile_device_480px {
+        display: none;
+        text-align: left;
+    }
+
+
+    /* if mobile device max width 380px */
+    @media only screen and (max-device-width: 450px) {
+        .mobile_device_380px{display: inline-block;}
+        .desktop {display: none;}
+    }
+
+    /* if mobile device max width 480px */
+    @media only screen and (max-device-width: 480px) {
+       .mobile_device_480px{display: inline-block;}
+       .desktop {display: none;}
+    }
+
 html, body{
 	font-family: Arial;
-	line-height:1.4;
-	margin:0;
+	margin: 0 auto;
+	line-height: 1.4;
 	width: 100%;
 	height: 100%;
-	}
+}
 
 .img-container {
   position: relative;
@@ -22,6 +45,9 @@ html, body{
 
 .line {
 color: blue;
+border-left: 2px solid blue;
+margin-left: 10%;
+margin-right: 10%;
 }
 
 ul {
@@ -45,19 +71,25 @@ pointer-events: none;
 	font-size:4em;
 }
 
+.min {
+    display: block;
+    margin-top: -10%;
+    word-wrap: break-word;
+}
+
 .max {
     display: flex;
     word-wrap: break-word;
 }
 
-.left {
+.left-screen {
 width: 85%;
 flex: 1;
 margin-left: 10%;
 margin-top: -5%;
 }
 
-.right {
+.right-screen {
 width: 25%;
 flex: 1;
 margin-top: -5%;
@@ -84,37 +116,66 @@ margin-top: -5%;
   font-size: 15px;
 }
 
-.col-1 {
-    margin-left: 15px;
-    width: 3.25cm;
-    text-align: right;
+.column{
+text-align: right;
+display: inline-block;
 }
 
-.col-2 {
-  flex: 1;
+.left {
+width: 12.5%;
+}
 
+.big {
+width: 22.5%;
+}
+
+.middle {
+width: 5%;
+}
+
+.right {
+text-align: left;
+width: 72.5%;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 a {
 color: black;
+line-height: 1.4;
 }
 
 h2 {
 text-align: left;
-margin-bottom: 2px;
+margin-bottom: 0%;
 }
 
 h4 {
 margin-top: 1em;
+font-weight: normal;
+text-align: right;
+}
+
+h5 {
+text-align: left;
+margin-bottom: 0%;
 }
 
 p {
 margin-bottom: 15px; /* add some spacing between list items */
 text-align: left;
-margin-left: 15px;
 text-decoration: none;
 }
 
+.small {
+font-size: 75%;
+}
 
 .cursor{
     cursor: url(https://i.imgur.com/RUE567I.gif), auto;
@@ -170,12 +231,12 @@ text-decoration: none;
         /* The animation code */
 @keyframes pop {
   0%   {visibility: hidden; transform: translate(0%, -150%)}
-  100%  {transform: translate(0%, -300%)}
+  100%  {transform: translate(0%, -280%)}
 }
 
 @keyframes pop2 {
   0%   {visibility: hidden; transform: translate(0%, -150%)}
-  100%  {transform: translate(0%, -200%)}
+  100%  {transform: translate(0%, -180%)}
 }
 
 /* The element to apply the animation to */
@@ -203,6 +264,7 @@ text-decoration: none;
 .reply {
   position: absolute;
   display: none;
+  z-index: -1;
   }
 
 
@@ -237,6 +299,38 @@ text-decoration: none;
   animation-delay: 6s;
 }
 
+.query1-mobile {
+  position: absolute;
+  display: block;
+  width: 75%;
+  opacity: 1;
+  animation: appear1-mobile both;
+  animation-duration: 1s;
+  animation-delay: 6s;
+}
+
+.query2-mobile {
+  position: absolute;
+  display: block;
+  right: 10%;
+  width: 95%;
+  opacity: 1;
+  animation: appear2-mobile both;
+  animation-duration: 1s;
+  animation-delay: 6s;
+}
+
+.query3-mobile {
+  position: absolute;
+  display: block;
+  width: 75%;
+  opacity: 1;
+  animation: appear3-mobile both;
+  animation-duration: 1s;
+  animation-delay: 6s;
+}
+
+
 @keyframes appear1 {
   0%   {visibility: hidden; transform: translate(-25%, -100%)}
   100%  {transform: translate(-20%, -100%)}
@@ -248,6 +342,84 @@ text-decoration: none;
 @keyframes appear3 {
   0%   {visibility: hidden; transform: translate(-25%, -200%)}
   100%  {transform: translate(-20%, -200%)}
+}
+
+@keyframes appear1-mobile {
+  0%   {visibility: hidden; transform: translate(-30%, -140%)}
+  100%  {transform: translate(-25%, -140%)}
+}
+@keyframes appear2-mobile {
+  0%   {visibility: hidden; transform: translate(-30%, -250%)}
+  100%  {transform: translate(-25%, -250%)}
+}
+@keyframes appear3-mobile {
+  0%   {visibility: hidden; transform: translate(-30%, -225%)}
+  100%  {transform: translate(-25%, -225%)}
+}
+
+.centered-mobile {
+ position: absolute;
+ margin: auto;
+ width: 25%;
+ top: 12%;
+ left: 38%;
+ text-align: left;
+}
+
+.centered2-mobile {
+ margin: auto;
+ position: absolute;
+ width: 25%;
+ top: 12%;
+ right: 38%;
+ text-align: right;
+}
+
+.centered-big-mobile {
+ position: absolute;
+ width: 18%;
+ top: 5%;
+ right: 40%;
+ text-align: right;
+}
+
+
+.centered-small-mobile {
+ color: blue;
+ background-color: white;
+ border: none;
+ margin: auto;
+ padding: 1%;
+ position: absolute;
+ font-size: 0.8vw;
+ width: 17.5%;
+ top: 12%;
+ right: 42%;
+ text-align: left;
+}
+
+.centered-small-mobile:hover {
+ color: black;
+ cursor: pointer;
+}
+
+
+.centered-medium-mobile {
+ color: blue;
+ background-color: white;
+ border: none;
+ margin: auto;
+ padding: 0%;
+ position: absolute;
+ width: 18.5%;
+ top: 12%;
+ right: 42%;
+ text-align: left;
+}
+
+.centered-medium-mobile:hover {
+ color: black;
+ cursor: pointer;
 }
 
 .centered {
@@ -273,12 +445,12 @@ text-decoration: none;
 .centered-big {
  margin: auto;
  position: absolute;
- font-size: 0.7vw;
+ font-size: 0.75vw;
  width: 18%;
  top: 5%;
  right: 40%;
  text-align: right;
- z-index: 1;
+ z-index: -1;
 }
 
 
@@ -320,4 +492,3 @@ text-decoration: none;
  color: black;
  cursor: pointer;
 }
-
